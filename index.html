@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="Estilo1.css">
     <meta charset="UTF-8">
-    <title>HOLA MUNDO</title>
+    <title>Problema Fisica "Tiro Oblicuo"</title>
 </head>
 <body>
-<h1>
-    Calculo de trayectoria de bomba tirada<br>
-    con un mortero(tiro oblicuo)
-</h1>
+<div class="titulo">
+    <h1>
+        Calculo de trayectoria de bomba tirada<br>
+        con un mortero(tiro oblicuo)
+    </h1>
+</div>
 <div>
     <h4>MARCO TEORICO</h4>
     marco teorico propiamente dicho
@@ -17,33 +20,46 @@
     </button>
 </div>
 <div>
-    <h4>
-        INGRESO DE DATOS
-    </h4>
-    Velocidad inicial
-    <input type="text" name="Vo">
-    <select name="UnidadVo">
-        <option value="m/s">m/s</option>
-        <option value="km/h">km/h</option>
-    </select><br>
-    Angulo inicial
-    <input type="text" name="titao">
-    <select name="Unidadtitao">
-        <option value="grados">grados</option>
-        <option value="radianes">radianes</option>
-    </select><br>
-    Altura inicial
-    <input type="text" name="Ho">
-    <select name="UnidadHo">
-        <option value="mo">m</option>
-        <option value="kmo">km</option>
-    </select><br>
-    Altura final
-    <input type="text" name="Hf">
-    <select name="UnidadHf">
-        <option value="mf">m</option>
-        <option value="kmf">km</option>
-    </select><br>
+    <div class="hola">
+        <h4>
+            INGRESO DE DATOS
+        </h4>
+        <button type="button">Ingresar otros datos</button>
+    </div>
+    <div>
+        Velocidad inicial
+        <input type="text" name="Vo">
+        <select name="UnidadVo">
+            <option value="m/s">m/s</option>
+            <option value="km/h">km/h</option>
+        </select><br>
+        Angulo inicial
+        <input type="text" name="titao">
+        <select name="Unidadtitao">
+            <option value="grados">grados</option>
+            <option value="radianes">radianes</option>
+        </select><br>
+        Altura inicial
+        <input type="text" name="Ho">
+        <select name="UnidadHo">
+            <option value="mo">m</option>
+            <option value="kmo">km</option>
+        </select><br>
+        Altura final
+        <input type="text" name="Hf">
+        <select name="UnidadHf">
+            <option value="mf">m</option>
+            <option value="kmf">km</option>
+        </select><br>
+    </div>
+    <div>
+        <button type="button">Ingresar otros datos</button>
+        <br>
+        <button type="button">Usuario Experimentado</button>
+    </div>
+</div>
+<div>
+    <button type="button">Realizar el calculo</button>
 </div>
 </body>
 </html>
