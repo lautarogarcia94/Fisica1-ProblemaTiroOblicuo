@@ -4,8 +4,35 @@ body{
 header{
     text-align: center;
 }
-
-
+.headerTitulo h1{
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bold;
+}
+.divLetra h3{
+    font-family: 'Shadows Into Light', cursive;
+}
+.divLetra p{
+    font-family: 'Shadows Into Light', cursive;
+    font-size: large;
+}
+.divLetra button{
+    font-family: 'Shadows Into Light', cursive;
+    font-size: large;
+    border-radius: 12px;
+    border: 1px solid black;
+    transition-duration: 0.4s;
+    background-color: white;
+}
+.divLetra button:hover{
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+.divLetra a:link{
+    color:black;
+}
+.divLetra select{
+    font-family: 'Shadows Into Light', cursive;
+}
 
 .row h4{
     padding-top: 30px;
