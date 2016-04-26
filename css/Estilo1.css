@@ -35,6 +35,14 @@ header{
     border-radius: 12px;
     border: 1px solid black;
 }
+.divLetra input{
+    font-family: 'Shadows Into Light', cursive;
+    border-radius: 12px;
+    border: 1px solid black;
+    text-indent: 8px;
+    width: 200px;
+    font-size: large;
+}
 
 .row h4{
     padding-top: 30px;
