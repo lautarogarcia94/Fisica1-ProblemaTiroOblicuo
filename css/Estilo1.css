@@ -1,0 +1,12 @@
+body{
+    background: linear-gradient(to right, white, lightblue);
+}
+header{
+    text-align: center;
+}
+
+
+
+.row h4{
+    padding-top: 30px;
+}
