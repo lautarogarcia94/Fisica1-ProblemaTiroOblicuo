@@ -5,19 +5,18 @@ header{
     text-align: center;
 }
 .headerTitulo h1{
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Archivo Narrow', sans-serif;
     font-weight: bold;
 }
 .divLetra h3{
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Archivo Narrow', sans-serif;
+    padding-top: 30px;
 }
 .divLetra p{
-    font-family: 'Shadows Into Light', cursive;
-    font-size: large;
+    font-family: 'Archivo Narrow', sans-serif;
 }
 .divLetra button{
-    font-family: 'Shadows Into Light', cursive;
-    font-size: large;
+    font-family: 'Archivo Narrow', sans-serif;
     border-radius: 12px;
     border: 1px solid black;
     transition-duration: 0.4s;
@@ -31,23 +30,24 @@ header{
     color:black;
 }
 .divLetra select{
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Archivo Narrow', sans-serif;
     border-radius: 12px;
     border: 1px solid black;
 }
 .divLetra input{
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Archivo Narrow', sans-serif;
     border-radius: 12px;
     border: 1px solid black;
     text-indent: 8px;
     width: 200px;
-    font-size: large;
 }
 .boton {
     margin-top: 20px;
     width: 200px;
 }
 
-.row h4{
-    padding-top: 30px;
+.btn {
+    width: 100px;
 }
+
+
