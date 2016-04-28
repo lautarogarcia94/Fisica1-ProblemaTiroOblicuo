@@ -41,13 +41,25 @@ header{
     text-indent: 8px;
     width: 200px;
 }
+.divLetra span{
+    font-family: 'Archivo Narrow', sans-serif;
+    margin-left: -80px;
+}
 .boton {
     margin-top: 20px;
     width: 200px;
 }
+.divLetra canvas{
+    background-color: white;
+}
 
 .btn {
     width: 100px;
+}
+
+.marginVideo{
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 
