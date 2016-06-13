@@ -12,6 +12,8 @@
     <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
     <!--primero se añade jquery despues bootstrap-->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/alerta.js"></script>
+    <script type="text/javascript" src="js/canvas.js"></script>
 </head>
 <body>
 <div class="container-fluid">
@@ -35,7 +37,7 @@
                 <p>Velocidad Inicial</p>
             </div>
             <div class="col-md-1">
-                <input type="text" name="Vo">
+                <input type="text" name="Vo" id="Vo">
             </div>
             <div class="col-md-1 col-md-offset-1">
                 <select name="UnidadVo">
@@ -50,7 +52,7 @@
                 <p>Angulo Inicial</p>
             </div>
             <div class="col-md-1">
-                <input type="text" name="titao">
+                <input type="text" name="titao" id="Titao">
             </div>
             <div class="col-md-1 col-md-offset-1">
                 <select name="Unidadtitao">
@@ -65,7 +67,7 @@
                 <p>Altura Inicial</p>
             </div>
             <div class="col-md-1">
-                <input type="text" name="Ho">
+                <input type="text" name="Ho" id="Ho">
             </div>
             <div class="col-md-1 col-md-offset-1">
                 <select name="UnidadHo">
@@ -81,7 +83,7 @@
                 <p>Altura Final</p>
             </div>
             <div class="col-md-1">
-                <input type="text" name="Hf">
+                <input type="text" name="Hf" id="Hf">
             </div>
             <div class="col-md-1 col-md-offset-1">
                 <select name="UnidadHf">
@@ -96,7 +98,7 @@
                 <p>Tiempo</p>
             </div>
             <div class="col-md-1">
-                <input type="text" name="Hf">
+                <input type="text" name="Tiempo" id="Tiempo">
             </div>
             <div class="col-md-1 col-md-offset-1">
                 <select name="Unidadt">
@@ -111,7 +113,7 @@
                 <p>Distancia</p>
             </div>
             <div class="col-md-1">
-                <input type="text" name="Hf">
+                <input type="text" name="dist" id="Dist">
             </div>
             <div class="col-md-1 col-md-offset-1">
                 <select name="Unidadd">
@@ -126,7 +128,7 @@
                 <p>Gravedad</p>
             </div>
             <div class="col-md-1">
-                <input type="text" name="Hf">
+                <input type="text" name="Gravedad" id="Gravedad">
             </div>
             <div class="col-md-1 col-md-offset-1">
                 <select name="Unidadg">
@@ -195,7 +197,7 @@
         <div class="row">
             <div class="col-md-2 col-md-offset-5">
                 <a href="Resultado.html">
-                    <button class="boton" type="button">Realizar cálculo</button>
+                    <button class="boton" type="button" id="Calculo-Mas-Datos">Realizar cálculo</button>
 
                 </a>
             </div>
