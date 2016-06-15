@@ -112,46 +112,81 @@ $(document).on("ready",function(){
 function cargarResultado(){
     var g= 9.8;
     var myArr = window.location.hash.split('#');
-    var vo=(myArr[2]); //masa
-    var uvo=(myArr[3]); //unidadesMasa
-    var titao=(myArr[4]); //altura
-    var utitao= (myArr[5]); // unidadesAltura
-    var ho = (myArr[6]); //Distancia
-    var uho = (myArr[7]); // Unidades distancia
-    var hf = (myArr[8]); // Coeficiente de rozamiento
-    var uhf = (myArr[9]); // Coeficiente de elasticidad
+    var t=(myArr[1]); //tiempo total del movimiento
+    var ut=(myArr[2]); //unidad del tiempo
+    var dx=(myArr[3]); // distancia en x del proyectil
+    var udx= (myArr[4]); // unidad de la distancia
+    var ho = (myArr[5]); // altura inicial
+    var uho = (myArr[6]); // unidad altura
+    var hf = (myArr[7]); // altura final
+    var uhf = (myArr[8]); // unidad altura
+    var hmax = (myArr[9]); // altura maxima
+    var uhmax = (myArr[10]); // unidad altura
+    document.getElementById("Tiempo").value = t;
+    document.getElementById("Distancia").value = dx;
 
-    if(ho==""){
-        ho = 0;
-    }
-    if(hf==""){
-        hf = 0;
-    }
-    if(uvo=="km/h") {
-        vo = vo/3.6;
-    }
-    if(uho=="km"){
-        ho = ho*1000;
-    }
-    if(uhf=="km"){
-        hf = hf*1000;
-    }
-    if(utitao=="grados") {
-        titao = (titao * Math.PI) / 180;
-    }
-    
 }
 
 function calculo(){
+    var g=9.8;
+    //Lectura de valores de las variables
     var vo = document.getElementById("Vo").value;
     var titao = document.getElementById("Titao").value;
     var ho = document.getElementById("Ho").value;
     var hf = document.getElementById("Hf").value;
+
+    //Lectura de las unidades de las variables
     var uvo = document.getElementById("Uvo").value;
     var utitao = document.getElementById("Utitao").value;
     var uho = document.getElementById("Uho").value;
     var uhf = document.getElementById("Uhf").value;
-    var url = 'Resultado.html#'+1+"#"+vo+"#"+uvo+"#"+titao+"#"+utitao+"#"+ho+"#"+uho+"#"+hf+"#"+uhf;
+
+    if(ho == ""){
+        ho = 0;
+    }
+    if(hf == ""){
+        hf = 0;
+    }
+    if(vo == ""){
+        vo = 0;
+    }
+    if(titao == ""){
+        titao = 0;
+    }
+    if(uvo == "km/h") {
+        vo = vo/3.6;
+        uvo = "m/s";
+    }
+    if(uho == "km"){
+        ho = ho*1000;
+        uho = "m";
+    }
+    if(uhf == "km"){
+        hf = hf*1000;
+        uhf = "m";
+    }
+    if(utitao == "grados") {
+        titao = (titao * Math.PI) / 180;
+        utitao = "radianes";
+    }
+    //Calculo para el tramo de subida.
+    var hmax = Math.pow(vo*Math.sin(titao), 2)/(2*g) + ho;
+    var uhmax = "m";
+    var t1 = (vo*Math.sin(titao))/g;
+
+    //Calculo para el tramo de bajada.
+    var vf = Math.pow(2*g*(hmax-hf), 0.5);
+    var t2 = vf/g;
+
+    var ttotal = t1 + t2;
+    var uttotal = "s";
+    var dx = ttotal* vo*Math.cos(titao);
+    var udx = "m";
+
+    ttotal = ttotal.toFixed(3);
+    dx = dx.toFixed(3);
+    hmax = hmax.toFixed(3);
+    var url = 'Resultado.html#'+ttotal+"#"+uttotal+"#"+dx+"#"+udx+"#"+ho+"#"+uho+"#"+hf+"#"+uhf+"#"+hmax+"#"+uhmax;
     window.location.replace(url);
     /* if(ho==""){
      ho = 0;
