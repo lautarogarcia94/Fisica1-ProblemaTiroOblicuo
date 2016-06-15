@@ -70,7 +70,7 @@
                 <input type="text" name="Vo" id="Vo">
             </div>
             <div class="col-md-1 col-md-offset-1">
-                <select name="UnidadVo">
+                <select name="UnidadVo" id="Uvo">
                     <option value="m/s">m/s</option>
                     <option value="km/h">km/h</option>
                 </select>
@@ -90,7 +90,7 @@
             <input type="text" name="titao" id="Titao">
         </div>
         <div class="col-md-1 col-md-offset-1">
-            <select name="Unidadtitao">
+            <select name="Unidadtitao" id="Utitao">
                 <option value="grados">grados</option>
                 <option value="radianes">radianes</option>
             </select>
@@ -105,9 +105,9 @@
                 <input type="text" name="Ho" id="Ho">
             </div>
             <div class="col-md-1 col-md-offset-1">
-                <select name="UnidadHo">
-                    <option value="mo">m</option>
-                    <option value="kmo">km</option>
+                <select name="UnidadHo" id="Uho">
+                    <option value="m">m</option>
+                    <option value="km">km</option>
                 </select>
             </div>
         </div>
@@ -121,9 +121,9 @@
                 <input type="text" name="Hf" id="Hf">
             </div>
             <div class="col-md-1 col-md-offset-1">
-                <select name="UnidadHf">
-                    <option value="mf">m</option>
-                    <option value="kmf">km</option>
+                <select name="UnidadHf" id="Uhf">
+                    <option value="m">m</option>
+                    <option value="km">km</option>
                 </select>
             </div>
         </div>
@@ -131,10 +131,8 @@
 
         <div class="row">
             <div class="col-md-2 col-md-offset-5">
-                <a href="Resultado.html">
-                    <button class="boton" type="button">Realizar cálculo</button>
 
-                </a>
+                    <button class="boton" type="button" id="Result" onclick="calculo()">Realizar cálculo</button>
             </div>
         </div>
     </div>

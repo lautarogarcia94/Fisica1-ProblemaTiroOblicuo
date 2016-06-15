@@ -1,25 +1,24 @@
 /**
  * Created by LAN on 13/06/2016.
  */
-var myCanvas = document.getElementById("lienzo");
-var context = myCanvas.getContext("2d");
 
 
 function fulcro()
 {
     /* Aca dibujo la parabola */
+    var myCanvas = document.getElementById("lienzo");
+    var context = myCanvas.getContext("2d");
+    context.fillStyle="black";
     context.beginPath();
 
-    context.moveTo(255,250);
-    context.lineTo(285,250);
-    context.lineTo(270,220);
-    context.lineTo(255,250);
+    context.moveTo(155,240);
+    context.moveTo(355,210);
+    context.lineTo(350,200);
+    context.lineTo(150,230);
+
     context.closePath();
 
-    context.lineWidth=2;
-    context.fillStyle="black";
-    context.fill();
-    context.strokeStyle="black";
+    //context.fill();
     context.stroke();
 
 
