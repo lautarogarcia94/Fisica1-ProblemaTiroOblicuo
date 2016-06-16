@@ -12,8 +12,13 @@
     <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
     <!--primero se añade jquery despues bootstrap-->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/hojaCalculo.js"></script>
     <script type="text/javascript" src="js/alerta.js"></script>
-    <script type="text/javascript" src="js/canvas.js"></script>
+
+    <script src="js/alertify.min.js"></script>
+    <link rel="stylesheet" href="css/alertify.min.css" /> <!--esto ?-->
+    <link rel="stylesheet" href="css/themes/default.min.css" /> <!--esto ?-->
+    <link rel="stylesheet" href="css/themes/default.rtl.min.css" /> <!--esto ?-->
 </head>
 <body>
 <div class="container-fluid">
@@ -37,7 +42,7 @@
                 <p>Velocidad Inicial</p>
             </div>
             <div class="col-md-1">
-                <input type="text" name="Vo" id="Vo">
+                <input type="text" name="Vo" id="Vo" onkeyup="pruebaVo()" title="Campo Numérico">
             </div>
             <div class="col-md-1 col-md-offset-1">
                 <select name="UnidadVo">
@@ -52,7 +57,7 @@
                 <p>Angulo Inicial</p>
             </div>
             <div class="col-md-1">
-                <input type="text" name="titao" id="Titao">
+                <input type="text" name="titao" id="Titao" onkeyup="pruebaTitao()" title="Campo Numérico">
             </div>
             <div class="col-md-1 col-md-offset-1">
                 <select name="Unidadtitao">
@@ -67,7 +72,7 @@
                 <p>Altura Inicial</p>
             </div>
             <div class="col-md-1">
-                <input type="text" name="Ho" id="Ho">
+                <input type="text" name="Ho" id="Ho" onkeyup="pruebaHo()" title="Campo Numérico">
             </div>
             <div class="col-md-1 col-md-offset-1">
                 <select name="UnidadHo">
@@ -83,7 +88,7 @@
                 <p>Altura Final</p>
             </div>
             <div class="col-md-1">
-                <input type="text" name="Hf" id="Hf">
+                <input type="text" name="Hf" id="Hf" onkeyup="pruebaHf()" title="Campo Numérico">
             </div>
             <div class="col-md-1 col-md-offset-1">
                 <select name="UnidadHf">
@@ -98,7 +103,7 @@
                 <p>Tiempo</p>
             </div>
             <div class="col-md-1">
-                <input type="text" name="Tiempo" id="Tiempo">
+                <input type="text" name="Tiempo" id="Tiempo" onkeyup="pruebaTiempo()" title="Campo Numérico">
             </div>
             <div class="col-md-1 col-md-offset-1">
                 <select name="Unidadt">
@@ -113,7 +118,7 @@
                 <p>Distancia</p>
             </div>
             <div class="col-md-1">
-                <input type="text" name="dist" id="Dist">
+                <input type="text" name="dist" id="Dist" onkeyup="pruebaDistancia()" title="Campo Numérico">
             </div>
             <div class="col-md-1 col-md-offset-1">
                 <select name="Unidadd">
@@ -128,7 +133,7 @@
                 <p>Gravedad</p>
             </div>
             <div class="col-md-1">
-                <input type="text" name="Gravedad" id="Gravedad">
+                <input type="text" name="Gravedad" id="Gravedad" onkeyup="pruebaGravedad()" title="Campo Numérico">
             </div>
             <div class="col-md-1 col-md-offset-1">
                 <select name="Unidadg">
@@ -183,7 +188,7 @@
 
         <div class="row">
             <div class="col-md-3 col-md-offset-2">
-                <input name="cbipeliculas" type="checkbox" /><span>Gravedad</span>
+                <input name="cbipeliculas" type="checkbox"  /><span>Gravedad</span>
             </div>
         </div>
 
@@ -196,10 +201,7 @@
         </div>
         <div class="row">
             <div class="col-md-2 col-md-offset-5">
-                <a href="Resultado.html">
-                    <button class="boton" type="button" id="Calculo-Mas-Datos">Realizar cálculo</button>
-
-                </a>
+                    <button class="boton" type="button" onclick="calculoOtroDatos()">Realizar cálculo</button>
             </div>
         </div>
     </div>
