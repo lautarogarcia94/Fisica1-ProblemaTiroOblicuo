@@ -145,21 +145,31 @@ function cargarResultado(){
     document.getElementById("Distancia").value = dx;
 
     //Ajusto los valores de la distancia en X y la altura para poder dibujarlo
-    ajusteGrafico(hmax, dx,0);
-    //dibujar(hmax, dx);
-
+    ajusteGrafico(hmax, dx,0,ho,hf);
 }
 
-function ajusteGrafico(hmax, dx, cuenta){
-    if(dx<500 && dx>249){
-        dibujar(hmax, dx);
+/* Esta funcion se llama a si misma hasta que dx "entre" en el canvas, se realiza de esta forma para estar seguros
+** que siempre lograremos graficar la trayectoria del proyectil
+*/
+function ajusteGrafico(hmax, dx, cuenta, ho, hf){
+    if(dx<480 && dx>200){
+        dibujar(hmax, dx, ho, hf);
         alertaCanvas(cuenta);
     }
-    else{
-        dx = dx/2;
-        hmax = hmax/2;
-        cuenta++;
-        ajusteGrafico(hmax,dx,cuenta);
+    else
+    {
+       if(dx<200) {
+           dibujar(hmax, dx, ho, hf);
+           alertaCanvas(cuenta);
+       }
+        else{
+           dx = dx/2;
+           hmax = hmax/2;
+           ho = ho/2;
+           hf = hf/2;
+           cuenta++;
+           ajusteGrafico(hmax,dx,cuenta, ho, hf);
+       }
     }
 }
 
@@ -242,7 +252,7 @@ function calculo(){
 
     ttotal = ttotal.toFixed(3);
     dx = dx.toFixed(3);
-    hmax = hmax.toFixed(3);
+
     var url = 'Resultado.html#'+ttotal+"#"+uttotal+"#"+dx+"#"+udx+"#"+ho+"#"+uho+"#"+hf+"#"+uhf+"#"+hmax+"#"+uhmax;
     window.location.replace(url);
 }
