@@ -246,6 +246,7 @@ function calculo(){
         var t2 = vf/g;
     }    else{
         alertaDatoIngresado();
+        return;
     }
 
 

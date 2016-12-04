@@ -22,24 +22,16 @@ function dibujar(hmax1, dx1, ho1, hf1, cuenta1)
     endPt = {x: (dx +20), y: (280 - hf*2)};
     piso();
     cielo();
-    if(ho!=0)
-        dibujarHo();
-    if(hf!=0)
-        dibujarHf();
-    context.fillStyle = "black";
     escribirEje();
-    
 }
-var x= 0;
-var y=0;
-var n = 0;
+
 
 setInterval(function() {
     var myCanvas = document.getElementById("lienzo");
     var context = myCanvas.getContext("2d");
     var pt = getQuadraticCurvePoint(startPt.x, startPt.y, controlPt.x, controlPt.y, endPt.x, endPt.y, position);
     position = (position + 0.006) % 1.0;
-    context.clearRect(x,y,500,280);
+    context.clearRect(0,0,500,280);
     cielo();
     if(ho!=0)
         dibujarHo(ho);
@@ -75,6 +67,7 @@ function escribirEje(){
     x1 = x1.toFixed(3);
     x2 = x2.toFixed(3);
     context.font = "bold 12px sans-serif";
+    context.fillStyle = "black";
     context.fillText("0",1,290);
     context.fillText(x1.toString(),dx/2,295);
     context.fillText(x2.toString(),dx,295);
@@ -124,7 +117,7 @@ function piso(){
 function cielo(){
     var myCanvas = document.getElementById("lienzo");
     var context = myCanvas.getContext("2d");
-    context.fillStyle = "rgba(53, 207, 194, 0.5)"
+    context.fillStyle = "rgba(53, 207, 194, 0.5)";
     context.beginPath();
     context.moveTo(0,0);
     context.lineTo(0,280);
