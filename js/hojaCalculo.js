@@ -153,13 +153,13 @@ function cargarResultado(){
 */
 function ajusteGrafico(hmax, dx, cuenta, ho, hf){
     if(dx<480 && dx>200){
-        dibujar(hmax, dx, ho, hf);
+        dibujar(hmax, dx, ho, hf, cuenta);
         alertaCanvas(cuenta);
     }
     else
     {
        if(dx<200) {
-           dibujar(hmax, dx, ho, hf);
+           dibujar(hmax, dx, ho, hf, cuenta);
            alertaCanvas(cuenta);
        }
         else{
@@ -241,8 +241,13 @@ function calculo(){
     var t1 = (vo*Math.sin(titao))/g;
 
     //Calculo para el tramo de bajada.
-    var vf = Math.pow(2*g*(hmax-hf), 0.5);
-    var t2 = vf/g;
+    if((Math.pow(2*g*(hmax-hf), 0.5))>0){
+        var vf = Math.pow(2*g*(hmax-hf), 0.5);
+        var t2 = vf/g;
+    }    else{
+        alertaDatoIngresado();
+    }
+
 
     //Calculo para movimeinto en el eje X.
     var ttotal = t1 + t2;
